@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 110vh;
+            flex-direction: column;
+            background-color: #100101;
+            background-image: url(word.jpg);
+        }
+        textarea{
+            margin: px;
+            border-radius: 50px;
+            outline: 0;
+            padding: 5px;
+            border: none;
+            resize: none;
+            font-weight: bolder;
+            text-align: center;
+            background-color: rgb(250, 251, 250);
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            border-radius: 100px;
+            margin: 15px; 
+            box-shadow: 10px 10px 10px;
+            background-color:rgb(34, 245, 44);
+            border: none;
+            font-weight: bold;
+        }
+        h1{
+            padding: 5px;
+            color: rgb(12, 1, 1); 
+        }
+        footer{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            color: rgb(239, 244, 241);
+        }
+        footer:hover{
+            color: cadetblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <textarea placeholder="ENTER THE WORDS" id="text" cols="30" rows="2" ></textarea>
+    <button id="word" onclick="WordCount()">CALCULATE</button>
+    <h1 id="wordget"></h1>
+    <script>
+        function WordCount(){
+            let text = document.getElementById('text').value;
+            document.getElementById('wordget').innerHTML=text.split(" ").length;
+        }
+    </script>
+</body>
+</html>
